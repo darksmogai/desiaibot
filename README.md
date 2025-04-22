@@ -19,7 +19,7 @@ DesiaiBot is a lightweight, plug-and-play chatbot widget you can embed in any we
 Paste this before your closing `</body>` tag:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/darksmogai/DesiaiBot@v1.0.0/DesiaiBot.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/darksmogai/DesiaiBot@v1.0.0/DesiaiBot.min.js"></script>
 <script>
   initDesiaiBot({
     userId: "user@domain.com",
