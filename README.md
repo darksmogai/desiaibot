@@ -1,6 +1,6 @@
-# 🤖 DesiBot - Plug & Play Chatbot Widget
+# 🤖 DesiaiBot - Plug & Play Chatbot Widget
 
-DesiBot is a lightweight, plug-and-play chatbot widget you can embed in any website using just a single `<script>` tag. Ideal for lead generation, support, or user onboarding with minimal setup.
+DesiaiBot is a lightweight, plug-and-play chatbot widget you can embed in any website using just a single `<script>` tag. Ideal for lead generation, support, or user onboarding with minimal setup.
 
 ---
 
@@ -19,12 +19,12 @@ DesiBot is a lightweight, plug-and-play chatbot widget you can embed in any webs
 Paste this before your closing `</body>` tag:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/darksmogai/desibot@v1.0.0/desibot.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/darksmogai/DesiaiBot@v1.0.0/DesiaiBot.min.js"></script>
 <script>
-  initDesiBot({
+  initDesiaiBot({
     userId: "user@domain.com",
     theme: "light", // or "dark"
-    title: "DesiBot",
+    title: "DesiaiBot",
     position: "bottom-right", // or "bottom-left"
     backendUrl: "https://yourapi.com"
   });
