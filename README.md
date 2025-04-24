@@ -21,7 +21,7 @@ Paste this before your closing `</body>` tag:
 ```html
 <script src="https://cdn.jsdelivr.net/gh/darksmogai/DesiaiBot@v1.0.0/DesiaiBot.min.js"></script>
 <script>
-  initDesiaiBot({
+  initDesiBot({
     userId: "user@domain.com",
     theme: "light", // or "dark"
     title: "DesiaiBot",
