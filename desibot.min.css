@@ -1,3 +1,12 @@
+:root {
+  --desibot-primary-h: 225;
+  --desibot-primary-s: 98%;
+  --desibot-primary-l: 24%;
+  --desibot-primary: hsl(var(--desibot-primary-h), var(--desibot-primary-s), var(--desibot-primary-l));
+  --desibot-primary-light: hsl(var(--desibot-primary-h), var(--desibot-primary-s), 70%);
+}
+
+
 #desibot-launcher {
   position: fixed;
   width: 60px;
@@ -93,7 +102,7 @@
 }
 
 .desibot-bot .desibot-container {
-  background: linear-gradient(135deg, var(--desibot-primary), #65a4ff);
+  background: linear-gradient(135deg, var(--desibot-primary),var(--desibot-primary-light));
   color: #fff;
   width: fit-content;
   font-size: 13px;
@@ -156,14 +165,24 @@
   fill:rgb(117 117 117);
   width: 20px;
 }
-#desibot-footer .desibot-footer-title {
-  font-size: 12px;
-color: rgb(117 117 117);
-}
-#desibot-footer .desibot-footer-title span {
-  color: rgb(50 50 50);
-    font-size: 13px;
-}
+.desibot-footer-title {
+      font-size: 12px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff; 
+    }
+
+    .desibot-footer-title a {
+      text-decoration: none;
+      font-weight: 600;
+      background: linear-gradient(45deg, #012970, #012970);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.3s ease;
+    }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -240,4 +259,19 @@ color: rgb(117 117 117);
   0% { content: "⠁"; }
   33% { content: "⠃"; }
   66% { content: "⠇"; }
+}
+.desibot-load-history {
+  text-align: center;
+  padding: 8px 12px;
+  background: #eef3f7;
+  color: #333;
+  margin: 10px auto;
+  border-radius: 12px;
+  width: fit-content;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+.desibot-load-history:hover {
+  background: var(--desibot-primary-light);
 }
