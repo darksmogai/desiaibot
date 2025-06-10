@@ -1,190 +1,243 @@
 #desibot-launcher {
-    position: fixed;
-    width: 56px;
-    height: 56px;
-    bottom: 50px;
-    right: 35px;
-    background: #012970;
-    color: white;
-    font-size: 26px;
-    border-radius: 50%;
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 50px;
+  right: 35px;
+  background: linear-gradient(135deg, #012970, #005eff);
+  color: white;
+  font-size: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  animation: shimmer 4s infinite alternate;
+}
+
+#desibot-container {
+  width: 360px;
+  height: 480px;
+  max-height: 90vh;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+  font-family: "Segoe UI", sans-serif;
+}
+
+#desibot-header {
+  height: 84px;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: linear-gradient(135deg, var(--desibot-primary), #65a4ff);
+  color: white;
+}
+#desibot-header .desibot-header-title-wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  #desibot-container {
-    width: 340px;
-    height: 460px;
-    max-height: 90vh;
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 9999;
-    font-family: "Segoe UI", sans-serif;
-  }
-
-  #desibot-header {
-    background: linear-gradient(135deg, #012970, #012970);
-    padding: 14px 16px;
-    color: white;
-    font-weight: 600;
-    display: flex;
     justify-content: space-between;
-    font-size: 16px;
-    align-items: center;
-    box-shadow: 0 5px 13px rgb(0 0 0 / 29%);
-    z-index: 1;
+    padding: 16px 20px;
+    position: relative;
+    z-index: 2;
 
-  }
+}
+.desibot-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.desibot-logo{
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
 
-  #desibot-close {
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: lighter;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+#desibot-close {
+  fill: #fff;
+  cursor:pointer;
+}
+#desibot-close:hover{
 
-  #desibot-messages {
-    flex: 1;
-    padding: 16px;
-    overflow-y: auto;
-    background-color: #f5f5f5;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    scroll-behavior: smooth;
-  }
+}
 
-  .desibot-message .desibot-container{
-    max-width: 80%;
-    padding: 10px 14px;
-    border-radius: 18px;
-    font-size: 15px;
-    line-height: 1.5;
-    word-break: break-word;
-    animation: fadeIn 0.3s ease-in-out;
-  }
+#desibot-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background-color: #f0f4f8;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
 
-  .desibot-bot .desibot-container{
-    background: #012970;
-    color: #fff;
-        width: fit-content;
+.desibot-message .desibot-container {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: break-word;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.desibot-bot .desibot-container {
+  background: linear-gradient(135deg, var(--desibot-primary), #65a4ff);
+  color: #fff;
+  width: fit-content;
+  font-size: 13px;
+  border-radius: 12px 12px 12px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.desibot-user .desibot-container {
+  background: #dce1e9;
+  width: fit-content;
+  font-size: 13px;
+  border-radius: 12px 12px 0 12px;
+  margin-left: auto;
+  color: #333;
+}
+
+#desibot-input-container {
+  display: flex;
+  border-top: 1px solid #dbdfe6;
+  background: #fff;
+  padding: 10px;
+}
+
+#desibot-input {
+  flex: 1;
+  padding: 10px 14px;
+    border: 0;
+  border-radius: 20px;
+  font-size: 13px;
+  outline: none;
+  margin-right: 8px;
+  transition: border-color 0.2s;
+  color: rgb(6, 19, 43);
+}
+#desibot-input:focus {
+  border-color: var(--desibot-primary);
+}
+
+#desibot-send {
+  background: var(--desibot-primary);
+  color: white;
+  border: none;
+  padding: 0 16px;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#desibot-send:hover {
+  background: #0050c8;
+}
+
+#desibot-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem 1rem;
+}
+#desibot-footer svg{
+  fill:rgb(117 117 117);
+  width: 20px;
+}
+#desibot-footer .desibot-footer-title {
+  font-size: 12px;
+color: rgb(117 117 117);
+}
+#desibot-footer .desibot-footer-title span {
+  color: rgb(50 50 50);
     font-size: 13px;
-        border-radius: 12px 12px 12px 0;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-  .desibot-user .desibot-container{
-    background: #cfd1d0;
-    width: fit-content;
-font-size: 13px;
-border-radius: 12px 12px 0 12px;
-margin-left: auto;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  #desibot-input-container {
-    display: flex;
-    border-top: 1px solid #ddd;
-    background: #fff;
-    padding: 8px;
+@keyframes shimmer {
+  0% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-
-  #desibot-input {
-    flex: 1;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 13px;
-    outline: none;
-    margin-right: 8px;
+  100% {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   }
+}
 
-  #desibot-send {
-    background: #012970;
-    color: white;
-    border: none;
-    padding: 0 16px;
-    border-radius: 20px;
-    font-size: 18px;
-    cursor: pointer;
-  }
+/* Dark Theme */
+.desibot-dark #desibot-container {
+  background: #1e1e1e;
+  color: #eee;
+}
+.desibot-dark #desibot-header {
+  background: #333;
+}
+.desibot-dark #desibot-messages {
+  background: #2c2c2c;
+}
+.desibot-dark .desibot-message {
+  color: #eee;
+}
+.desibot-dark .desibot-bot .desibot-container {
+  background: #444;
+}
+.desibot-dark .desibot-user .desibot-container {
+  background: #007f5f;
+}
+.desibot-dark #desibot-input-container {
+  background: #1e1e1e;
+  border-top: 1px solid #444;
+}
+.desibot-dark #desibot-input {
+  background: #2c2c2c;
+  border: 1px solid #555;
+  color: #fff;
+}
+.desibot-dark #desibot-send {
+  background: #00c6ff;
+}
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Dark Theme */
-  .desibot-dark #desibot-container {
-    background: #1e1e1e;
-    color: #eee;
-  }
-
-  .desibot-dark #desibot-header {
-    background: #333;
-  }
-
-  .desibot-dark #desibot-messages {
-    background: #2c2c2c;
-  }
-
-  .desibot-dark .desibot-message {
-    color: #eee;
-  }
-
-  .desibot-dark .desibot-bot {
-    background: #444;
-  }
-
-  .desibot-dark .desibot-user {
-    background: #007f5f;
-  }
-
-  .desibot-dark #desibot-input-container {
-    background: #1e1e1e;
-    border-top: 1px solid #444;
-  }
-
-  .desibot-dark #desibot-input {
-    background: #2c2c2c;
-    border: 1px solid #555;
-    color: #fff;
-  }
-
-  .desibot-dark #desibot-send {
-    background: #00c6ff;
-  }
-
-  .desibot-meta {
+/* Meta Time */
+.desibot-meta {
   font-size: 10px;
   color: #888;
   text-align: right;
   margin-top: 5px;
 }
 .desibot-bot .desibot-meta {
-  text-align: left
+  text-align: left;
 }
 .desibot-user .desibot-meta {
-  text-align: right
+  text-align: right;
+}
+
+/* Typing Animation */
+.typing .desibot-text::after {
+  content: "⠇";
+  animation: dots 1s infinite;
+}
+@keyframes dots {
+  0% { content: "⠁"; }
+  33% { content: "⠃"; }
+  66% { content: "⠇"; }
 }
