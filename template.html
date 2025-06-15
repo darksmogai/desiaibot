@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DesiAIBot – AI Sales Assistant</title>
+  <style>
+    body {
+      background-color: #f4f7fc;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      color: #333;
+    }
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .logo img{
+          width: 17rem;
+    }
+    .header {
+      background: linear-gradient(180deg, #72a5ff, #003191);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px 5px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+    .header p {
+      font-size: 16px;
+      margin: 12px 0 0;
+    }
+    .animated-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    .hero {
+      display: block;
+      height: 200px;
+      display: block;
+      margin: -2px auto 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .content {
+      padding: 30px 20px;
+      background:#f9f9f9;
+    }
+    .features-wrapper {
+      padding:1rem;
+      background:url('https://darksmogai.com/assets/img/hero-bg.png') top center no-repeat;
+      background-size: cover;
+    }
+    .features {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 12px;
+     margin: 22px 0 40px 0;
+   }
+   .feature {
+     display: flex;
+ font-size: 15px;
+ align-items: center;
+ gap: 8px;
+}
+.feature-text {
+  color:#012970
+}
+   .feature-icon {
+     font-size: 22px;
+color: #f9d34d;
+   }
+    .content h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #012970;
+    }
+    .plans {
+      justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom:50px;
+
+    }
+    .plan-card {
+  background: linear-gradient(135deg, #fdfdfd, #f0f4ff);
+  border-radius: 16px;
+  padding: 24px 15px;
+  width: 42%;
+  box-shadow: 0 8px 24px rgba(1, 41, 112, 0.08);
+  border: none;
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(1, 41, 112, 0.15);
+}
+
+.plan-card .plan-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #012970;
+  background: #f9d34d;
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.plan-card .plan-price {
+  font-size: 22px;
+  color: #012970;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.plan-card p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+.plan-card a.cta-lighter {
+  margin-top: 14px;
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #012970, #4080ff);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.plan-card a.cta-lighter:hover {
+  background: linear-gradient(135deg, #011f4b, #3463e0);
+  transform: scale(1.05);
+}
+
+    .setup {
+      margin-top: 30px;
+    }
+    .icon-svg {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5ff;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(1, 41, 112, 0.1);
+}
+.icon-svg {
+  width: 40px;
+  height: 40px;
+  background: #e6edfb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(1, 41, 112, 0.1);
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(1, 41, 112, 0.08);
+}
+
+.step span {
+  font-size: 15px;
+  color: #012970;
+}
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center;
+      margin: 30px 0 10px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+    .stat {
+      width: 48%;
+      margin-bottom: 20px;
+    }
+    .stat h3 {
+      font-size: 22px;
+      color: #012970;
+      margin: 0;
+    }
+    .stat p {
+      font-size: 14px;
+      color: #555;
+      margin: 5px 0 0;
+    }
+    .cta-buttons {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .cta {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      transition: transform .2s;
+    }
+    .cta-lighter{
+      background: #f9d34d;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 18px;
+    }
+    .cta-primary {
+      background: #012970;
+      color: #fff;
+    }
+    .cta-secondary {
+      background: #00c6ff;
+      color: #fff;
+    }
+    .cta:hover {
+      transform: scale(1.05);
+    }
+    .footer {
+      background: #012970;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+    .footer a {
+      color: #00c6ff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <a href="https://darksmogai.com/" target="_blank" class="logo"><img src="https://darksmogai.com/ds.png" alt="DarkSmog.ai"></a>
+      <h1>Transform Your Website into a 24/7 Lead Machine</h1>
+      <p>With DesiAIBot — AI-driven chatbots & CRM for growth</p>
+      <img src="https://darksmogai.com/assets/img/chat.png" class="hero animated-image" alt="AI Chatbot" />
+    </div>
+
+    <div class="features-wrapper">
+      <h2>Why DesiAIBot?</h2>
+     <p>Engage & convert your website visitors automatically with real-time AI interaction, WhatsApp integration, and powerful follow-ups.</p>
+     <div class="features">
+             <div class="feature"><span class="feature-icon">&#x261E;</span><span class="feature-text">Smart WhatsApp + Web Chat</span></div>
+             <div class="feature"><span class="feature-icon">&#x261E;</span><span class="feature-text">Automated Lead Capture & Follow-ups</span></div>
+             <div class="feature"><span class="feature-icon">&#x261E;</span><span class="feature-text">Real-Time Analytics & CRM</span></div>
+             <div class="feature"><span class="feature-icon">&#x261E;</span><span class="feature-text">24/7 Availability</span></div>
+           </div>
+    </div>
+    <div class="content">
+
+
+      <h2>Choose Your Plan</h2>
+      <div class="plans">
+        <div class="plan-card">
+          <h3>Starter</h3>
+          <p>₹499/mo</p>
+          <p>Basic chatbot & CRM</p>
+          <p>Lead Generation</p>
+          <a href="https://darksmogai.com" class="cta cta-lighter">Know more</a>
+        </div>
+        <div class="plan-card">
+          <h3 style="color:#fd7e14">Growth</h3>
+          <p>₹1,499/mo</p>
+          <p>Smart filters + Integrations</p>
+          <p>Lead Generation with Filters</p>
+          <a href="https://darksmogai.com" class="cta cta-lighter">Know more</a>
+        </div>
+        <div class="plan-card">
+          <h3 style="color:#0d6efd;">Business</h3>
+          <p>₹3,499/mo</p>
+          <p>AI Engine + WhatsApp/FB</p>
+          <p>Lead + Sales Automation</p>
+          <a href="https://darksmogai.com" class="cta cta-lighter">Know more</a>
+        </div>
+        <div class="plan-card">
+          <h3 style="color:#198754;">Enterprise</h3>
+          <p>₹3,499/mo + Addtional charges</p>
+          <p>AI Engine + WhatsApp/FB</p>
+          <p>Multi-team Lead Analytics</p>
+          <a href="https://darksmogai.com" class="cta cta-lighter">Know more</a>
+        </div>
+      </div>
+      <h2>Get Started in 3 Steps</h2>
+      <div class="setup">
+        <div class="step">
+          <div class="icon-svg">
+            <!-- Step 1: User/Sign Up Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#012970" viewBox="0 0 24 24">
+              <path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+            </svg>
+          </div>
+          <span><strong>Step 1:</strong> Choose & Sign Up – Pick your perfect plan</span>
+        </div>
+
+        <div class="step">
+          <div class="icon-svg">
+            <!-- Step 2: AI/Training Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#012970" viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 0 0-3.5 19.4c.5.1.7-.2.7-.5v-2c-3 .6-3.6-1.5-3.6-1.5-.4-1-.9-1.2-.9-1.2-.7-.5 0-.5 0-.5.8.1 1.2.8 1.2.8.7 1.3 2 1 2.5.8.1-.5.3-.9.5-1.1-2.4-.3-4.9-1.2-4.9-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.4.1-2.8 0 0 .9-.3 2.9 1a10.3 10.3 0 0 1 5.3 0c2-.9 2.9-1 2.9-1 .5 1.4.2 2.5.1 2.8.6.7 1 1.6 1 2.7 0 4-2.5 4.8-4.9 5.1.3.3.6.8.6 1.6v2.3c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/>
+            </svg>
+          </div>
+          <span><strong>Step 2:</strong> Train the AI – We customize to your business</span>
+        </div>
+
+        <div class="step">
+          <div class="icon-svg">
+            <!-- Step 3: Deploy/Rocket Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#012970" viewBox="0 0 24 24">
+              <path d="M12 2c-4.5 3.8-6.7 7.4-6.7 11.1 0 1.5.4 2.9 1.1 4.1l-2.7 2.7c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l2.7-2.7c1.2.7 2.6 1.1 4.1 1.1 3.7 0 7.3-2.2 11.1-6.7C19.4 7.5 16 4 12 2zm0 10.5c-.8 0-1.5-.7-1.5-1.5S11.2 9.5 12 9.5s1.5.7 1.5 1.5S12.8 12.5 12 12.5z"/>
+            </svg>
+          </div>
+          <span><strong>Step 3:</strong> Deploy & Automate – Go live and convert</span>
+        </div>
+      </div>
+
+
+
+      <div class="cta-buttons">
+        <a href="https://darksmogai.com" class="cta cta-primary">Start Free Trial</a>
+        <a href="https://darksmogai.com/contact" class="cta cta-secondary">Book a Demo</a>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats">
+        <div class="stat">
+          <h3>500+</h3>
+          <p>Businesses</p>
+        </div>
+        <div class="stat">
+          <h3>50,000+</h3>
+          <p>Chats Automated</p>
+        </div>
+        <div class="stat">
+          <h3>24/7</h3>
+          <p>Support</p>
+        </div>
+        <div class="stat">
+          <h3>4+</h3>
+          <p>Platforms Integrated</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>📍 Bengaluru, India<br>📞 +91 7067927593 | ✉️ <a href="mailto:support@darksmogai.com">support@darksmogai.com</a></p>
+      <p>© 2025 DarkSmog AI. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
